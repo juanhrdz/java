@@ -38,6 +38,10 @@ public class Personaje implements Combatiente {
         System.out.println(nombre + " recibe " + danio + " puntos de daño. Puntos de vida restantes: " + (puntoDeVida > 0 ? puntoDeVida : 0));
     }
 
+    public int calcularDanio(){
+        return getNivel() * 10;
+    }
+
     @Override 
     public void atacar(){System.out.println(nombre + " ataca con un ataque básico.");}
 
@@ -51,4 +55,22 @@ public class Personaje implements Combatiente {
                 "\nNivel: " + nivel + 
                 "\nPuntos de Vida: " + puntoDeVida;
     }
+
+    public void mostrarEstado(){
+        System.out.println("Estado de " + this.nombre + 
+                            " | Puntos de Vida: "+ this.puntoDeVida);
+    }  
+
+    public void mostrarEstado(boolean detallado){
+        if(detallado){
+            System.out.println("Estado de " + this.nombre + 
+                                " | Puntos de Vida: "+ this.puntoDeVida +
+                                " | Nivel: "+ this.nivel);
+        }
+    } 
+     
+    public void mostrarEstado(String prefijo){
+        System.out.println(prefijo + "Estado de " + this.nombre + 
+                                    " | Puntos de Vida: "+ this.puntoDeVida);    
+    }   
 }

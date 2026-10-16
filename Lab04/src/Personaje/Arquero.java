@@ -41,6 +41,11 @@ public class Arquero extends Personaje{
     }  
 
     @Override 
+    public int calcularDanio(){
+        return (getNumeroDeFlechas() != 0) ? getPrecision() * getNivel() : 0;
+    }
+ 
+    @Override 
     public String toString() {
         return super.toString() + 
                 "\nYipo de Arco: " + tipoDeArco + 
@@ -48,4 +53,3 @@ public class Arquero extends Personaje{
                 "\n Presicion: " + precision;
     }  
 }
-`

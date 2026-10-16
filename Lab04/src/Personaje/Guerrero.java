@@ -19,7 +19,7 @@ public class Guerrero extends Personaje  {
     }
 
     @Override 
-    public void atacar() {
+    public void   atacar() {
         super.atacar();
         System.out.println(getNombre() + "golpea con su espada causando " + getFuerza() + " puntos de daño.");
     }
@@ -28,6 +28,11 @@ public class Guerrero extends Personaje  {
     public void defender() {
         super.defender();
         System.out.println(getNombre() + " se protege con su armadura " + getArmadura());
+    } 
+
+    @Override 
+    public int calcularDanio() {
+        return fuerza * getNivel(); 
     }
 
     @Override 

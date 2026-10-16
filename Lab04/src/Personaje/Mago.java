@@ -31,6 +31,11 @@ public class Mago extends Personaje{
     }   
 
     @Override 
+    public int calcularDanio(){
+        return mana * getNivel();
+    }
+
+    @Override 
     public String toString() {
         return super.toString() + 
                 "\nMana: " + mana + 
